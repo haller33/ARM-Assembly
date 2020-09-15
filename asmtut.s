@@ -3,29 +3,39 @@
 
 _start:
 
+
+_multiplicationWhenAcumulate:
 	
-_readkey:
-	mov r7,#3
-	mov r0,#0
-	mov r2,#10
-	ldr r1, =inputado
-	SWI 0
-	
-_write:	
-	mov r7,#4
-	mov r0,#1
-	mov r2,#5
-	ldr r1, =inputado
-	SWI 0
-	
-end:
-	mov r7,#1
+	mov r1, #0x14
+	mov r2, #0xA
+	mov r3, #0x5
+	mla r0, r1, r2, r3
+	mov r7, #1
 	SWI 0
 
 	
-	.data
-message:
-	.ascii "Hello World\n"
-inputado:
-	.ascii ""
+_multiplication:	
+	mov r1, #0x14
+	mov r2, #0xA
+	mul r0, r1, r2
+	mov r7, #1
+	SWI 0
 
+	
+_subtraction:	
+	
+	mov r1, #0x14
+	sub r0, r1, #0x10
+	mov r7, #1
+	SWI 0
+
+
+_addition:	
+	
+	mov r1, #0xA
+	add r0, r1, #0x14
+	mov r7, #1
+	SWI 0
+
+
+	

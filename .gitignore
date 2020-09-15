@@ -2,3 +2,4 @@
 !*.s
 !.gitignore
 !makefile
+!LICENSE
