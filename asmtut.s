@@ -3,6 +3,14 @@
 
 _start:
 
+_branching:
+	mov r0, #0x10
+	b _otherBranching
+	mov r0, #0xB
+_otherBranching:
+	mov r7, #1
+	SWI 0
+	
 
 _multiplicationWhenAcumulate:
 	
