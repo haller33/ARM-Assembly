@@ -7,6 +7,9 @@ asmtut.o: asmtut.s
 clean:
 	rm *.o asmtut
 
-asm: 
+asmc: 
 	gcc -o asmtut.S -S asmtut.c
+
+binc:
+	gcc -o asmtut.bin asmtut.c
 
